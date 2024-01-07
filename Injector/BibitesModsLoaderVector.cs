@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using BibitesModsLoader;
 
 namespace Injector;
 
@@ -54,11 +55,11 @@ internal class BibitesModsLoaderVector
                 return assemblies.First(x => x.FullName == eventArgs.Name);
             };
 
-            var coreAssembly = AppDomain.CurrentDomain.GetAssemblies().First(x => x.GetName().Name == BibitesModsLoader.ModInfo.MOD_NAME);
-            var entrypoint = coreAssembly.GetType("BibitesModsLoader.BibitesModsLoader");
+            var coreAssembly = AppDomain.CurrentDomain.GetAssemblies().First(x => x.GetName().Name == ModInfo.MOD_NAME);
+            var entrypoint = coreAssembly.GetType($"BibitesModsLoader.{nameof(Loader)}");
             if (entrypoint == null) throw new EntryPointNotFoundException("BibitesModsLoader found");
             var main = entrypoint.GetMethod(
-                nameof(BibitesModsLoader.BibitesModsLoader.Main),
+                nameof(BibitesModsLoader.Loader.Main),
                 BindingFlags.Public | BindingFlags.Static,
                 binder: null,
                 new Type[] { typeof(string) }, 

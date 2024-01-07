@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Unity.Cloud.UserReporting.Plugin;
 
 namespace BibitesModsLoader;
 
-public static class BibitesModsLoader
+public static class Loader
 {
     private static bool _enabled = false;
 
