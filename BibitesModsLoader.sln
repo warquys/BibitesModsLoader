@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibitesModsLoader", "BibitesModsLoader\BibitesModsLoader.csproj", "{DF20C695-E970-4331-9D9B-0733B8590C1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D5FA89-0CC5-4F95-BEE3-F7AAA3734D76}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		BibitesMods.ModInfo.props = BibitesMods.ModInfo.props
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injector", "Injector\Injector.csproj", "{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibitesModsLoader.ModsInfoProps", "BibitesModsLoader.ModsInfoProps\BibitesModsLoader.ModsInfoProps.csproj", "{CF8EDEFA-138D-4412-B96E-E5339E40387B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF20C695-E970-4331-9D9B-0733B8590C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF20C695-E970-4331-9D9B-0733B8590C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF20C695-E970-4331-9D9B-0733B8590C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF20C695-E970-4331-9D9B-0733B8590C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E38356C-1E20-40D9-A6A6-F39EC6F22978}
+	EndGlobalSection
+EndGlobal

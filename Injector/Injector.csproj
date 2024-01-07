@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+		<OutputType>Exe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<Platforms>AnyCPU</Platforms>
+		<LangVersion>10.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="dnlib" Version="3.6.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BibitesModsLoader\BibitesModsLoader.csproj" />
+	</ItemGroup>
+
+</Project>
