@@ -9,7 +9,7 @@ BibitesModsLoader is a lite loder use to load simple or more complexe mods for t
 - Replace the `BibitesAssembly.dll` located in The `Bibites_Data\Managed`.
 
 To install a mod just drop the dll mode inside the mod folder, if the mod need som depdancy drop them inside of depdancy.
-(only valid if the mode was designed for this loader mode)
+(only valid if the mode was designed for this mode loader)
 
 ## Usage
 
@@ -21,6 +21,7 @@ A log file will be generated at the root folder, the log file is reset at each r
 To create a mod you need to create a dll with the following structure:
 
 ```cs
+using BibitesModsLoader;
 
 [Mod("MyMod", "1.0.0", "MyName", Description = "MyMod is a mod for The Bibites Project")]
 public class MyMod : IMod
@@ -34,7 +35,7 @@ public class MyMod : IMod
 
 ModAttribute also has a "Nicess" property, the lower it is, the higher the priority of the mod will be.
 To change default code of the game you need to use Harmony, you can find more information in this [articles](https://harmony.pardeike.net/articles/patching.html).
-__
+  
 A version of the assembly release is available in releases. This dll is only there to be used as a dependency during compilation.
 If use change the value `AllowUnsafeBlocks` of your csproj to true.
 To do this go to property and cherche for "unsafe" change it to true, 
@@ -43,6 +44,8 @@ if it is already present and set to "false" just change the value to "true".
 
 ### Info and tips for harmony: 
 ```cs
+using BibitesModsLoader;
+using HarmonyLib;
 
 [Mod("MyMod", "1.0.0", "MyName", Description = "MyMod is a mod for The Bibites Project")]
 public class MyMod : IMod
@@ -55,8 +58,6 @@ public class MyMod : IMod
 		harmony.PatchAll();
 	}
 }
-
-using BibitesModsLoader;
 
 [HarmonyPatch(typeof(ClassToPatch), nameof(MethodToPatch))]
 public class PatchMyPatch
@@ -86,33 +87,33 @@ public class PatchMyPatch
 
 You can nam your method "Prefix" or "Postfix" to indicate Harmony is a [prefix](https://harmony.pardeike.net/articles/patching-prefix.html) or [postfix](https://harmony.pardeike.net/articles/patching-postfix.html), 
 or you can add `HarmonyPrefixAttribute` or `HarmonyPostfixAttribute` to indicate it.
-__
+  
 A prefix is call beffor the orignal method, a postfix is call after the origanl method.
 A prefix can return void or bool, if returing a bool, the value of the bool will indicate if the 
 original method will be executed.
-__
+  
 [Transpiler](https://harmony.pardeike.net/articles/patching-transpiler.html) can be use to change the original code
 by edditing the IL of base method. This method is harder but allows you to replace any part of the method and keep a
 compatiblity with other patch.
 If you whant to do transpiler use a `CodeMatcher`. This will make it easier to read and maintain.
-__
+  
 To debug the code genrated by harmony you can use `Harmony.DEBUG = true`
 
 ### Why use this?
 
-__
+  
 This will make it easier to add modes or remove modes for users.
 For dev mods will not always need to be recompiled, between each version, 
 only the modify dll will have to be replaced.
 This project can grow and become a larger library if necessary. 
 In the case of frequently patching method or possible conflict between modes,
 Code can be added directly to the projet to overall reduce the code and conflict.
-__
+  
 You can also if you need create APIs shared between several modes, 
 the API must either be added to this project or loaded as a mod. 
 If the project is loaded as a mod then it must have a lower level of nicess
 than the modes who is using it.
-__
+  
 In the case of an API and patch performed by the API. 
 It strongly advised to take the entire method code with modification and place 
 it in a prefix that returns false every time.
