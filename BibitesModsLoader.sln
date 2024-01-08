@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injector", "Injector\Inject
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibitesModsLoader.ModsInfoProps", "BibitesModsLoader.ModsInfoProps\BibitesModsLoader.ModsInfoProps.csproj", "{CF8EDEFA-138D-4412-B96E-E5339E40387B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExempleMod", "ExempleMod\ExempleMod.csproj", "{0A1D359B-0963-493C-A07A-2D022F41CEB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF8EDEFA-138D-4412-B96E-E5339E40387B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A1D359B-0963-493C-A07A-2D022F41CEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1D359B-0963-493C-A07A-2D022F41CEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1D359B-0963-493C-A07A-2D022F41CEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1D359B-0963-493C-A07A-2D022F41CEB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,24 +20,24 @@ public static class Loader
         _enabled = true;
         LogPath = logPath;
         // TODO: add code to avoid sending report to unity
-        LoadPlugins();
+        LoadMods();
     }
 
-    private static void Log(string msg)
+    public static void Log(string msg)
     {
         var callingAssembly = Assembly.GetCallingAssembly();
         var message = $"[{callingAssembly.GetName().Name}] {msg}{Environment.NewLine}";
         File.AppendAllText(LogPath, message);
     }
 
-    private static void Log(object obj)
+    public static void Log(object obj)
     {
         var callingAssembly = Assembly.GetCallingAssembly();
         var message = $"[{callingAssembly.GetName().Name}] {obj}{Environment.NewLine}";
         File.AppendAllText(LogPath, message);
     }
 
-    private static void LoadPlugins()
+    private static void LoadMods()
     {
         var assemblies = new List<Assembly>();
         var domain = AppDomain.CurrentDomain;
