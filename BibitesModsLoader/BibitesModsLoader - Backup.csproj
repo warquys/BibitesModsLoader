@@ -1,29 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Title>ExempleMods</Title>
-		<AssemblyName>$(Title)</AssemblyName>
+		<!--<Title>BibitesModsLoader</Title>-->
+		<!--<AssemblyName>$(Title)</AssemblyName>-->
 		<Version>1.0.0</Version>
 		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
 
 		<Authors>VT</Authors>
 		<Copyright>LGPL-3.0-only</Copyright>
-		<Description>A Exemple mod for the BibitesModsLoader.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Description>A mods loader for The Bibites Project.</Description>
 
 		<TargetFramework>net472</TargetFramework>
-		<ImplicitUsings>disable</ImplicitUsings>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<ImplicitUsings>disable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
+		<PackageTags>BibitesMods;Build;Props</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>$(SolutionDir)Nuget</PackageOutputPath>
+		<IncludeBuildOutput>true</IncludeBuildOutput>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>Build</ContentTargetFolders>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
-	<Import Project="..\BibitesMods.ModsInfoProps\BibitesMods.ModsInfoProps.props" />
+	<Import Project="..\BibitesMods.ModInfo.props" />
+
+	<ItemGroup>
+		<None Include="..\.editorconfig" Link=".editorconfig" />
+		<None Include="..\LICENSE">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Lib.Harmony" Version="2.2.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BibitesModsLoader\BibitesModsLoader.csproj" />
 		<Reference Include="BibitesAssembly">
 			<HintPath>..\Ref\BibitesAssembly-Publicized.dll</HintPath>
 		</Reference>

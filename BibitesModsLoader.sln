@@ -9,16 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
-		BibitesMods.ModInfo.props = BibitesMods.ModInfo.props
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Injector", "Injector\Injector.csproj", "{6FFC65ED-F391-4DA5-948D-F2964F0DCAEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibitesModsLoader.ModsInfoProps", "BibitesModsLoader.ModsInfoProps\BibitesModsLoader.ModsInfoProps.csproj", "{CF8EDEFA-138D-4412-B96E-E5339E40387B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibitesMods.ModsInfoProps", "BibitesMods.ModsInfoProps\BibitesMods.ModsInfoProps.csproj", "{CF8EDEFA-138D-4412-B96E-E5339E40387B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExempleMod", "ExempleMod\ExempleMod.csproj", "{0A1D359B-0963-493C-A07A-2D022F41CEB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExempleMod", "ExempleMod\ExempleMod.csproj", "{0A1D359B-0963-493C-A07A-2D022F41CEB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 
 namespace BibitesModsLoader;
 
-[AttributeUsage(System.AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
 public class ModAttribute : Attribute, IComparable<ModAttribute>
 {
     public ModAttribute(string name, string authors, string version)

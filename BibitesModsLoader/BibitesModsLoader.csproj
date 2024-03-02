@@ -6,10 +6,13 @@
 		<Version>1.0.0</Version>
 		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
 
+		<PackageId>BibitesModsLoader</PackageId>
 		<Authors>VT</Authors>
-		<Copyright>LGPL-3.0-only</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>A mods loader for The Bibites Project.</Description>
+		<PackageProjectUrl>https://github.com/warquys/BibitesModsLoader</PackageProjectUrl>
+		<PackageTags>Mod Mods Bibites BibitesModding</PackageTags>
+		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 
 		<TargetFramework>net472</TargetFramework>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -21,13 +24,27 @@
 		<IncludeBuildOutput>true</IncludeBuildOutput>
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<ContentTargetFolders>Build</ContentTargetFolders>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
-	<Import Project="..\BibitesMods.ModInfo.props" />
-
 	<ItemGroup>
-		<None Include="..\.editorconfig" Link=".editorconfig" />
-		<None Include="README.md" Pack="true" PackagePath="" />
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>Injector</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	
+	<Import Project="..\BibitesMods.ModsInfoProps\BibitesMods.ModsInfoProps.props" />
+	
+	<ItemGroup>
+		<None Include="..\.editorconfig" Link="Include\.editorconfig" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\Ref\UnityEngine.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.dll" />
+		<None Include="..\Ref\UnityEngine.CoreModule.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.CoreModule.dll" />
+		<None Include="..\Ref\UnityEngine.Physics2DModule.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.Physics2DModule.dll" />
+		<None Include="..\Ref\UnityEngine.PhysicsModule.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.PhysicsModule.dll" />
+		<None Include="..\Ref\BibitesAssembly-Publicized.dll" Pack="true" PackagePath="lib\net472\" Link="Include\BibitesAssembly-Publicized.dll" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -35,21 +52,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="BibitesAssembly">
-			<HintPath>..\Ref\BibitesAssembly-Publicized.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine">
-			<HintPath>..\Ref\UnityEngine.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>..\Ref\UnityEngine.CoreModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.Physics2DModule">
-			<HintPath>..\Ref\UnityEngine.Physics2DModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.PhysicsModule">
-			<HintPath>..\Ref\UnityEngine.PhysicsModule.dll</HintPath>
-		</Reference>
+		<Reference Include="BibitesAssembly" HintPath="..\Ref\BibitesAssembly-Publicized.dll" />
+		<Reference Include="UnityEngine" HintPath="..\Ref\UnityEngine.dll" />
+		<Reference Include="UnityEngine.CoreModule" HintPath="..\Ref\UnityEngine.CoreModule.dll" />
+		<Reference Include="UnityEngine.Physics2DModule" HintPath="..\Ref\UnityEngine.Physics2DModule.dll" />
+		<Reference Include="UnityEngine.PhysicsModule" HintPath="..\Ref\UnityEngine.PhysicsModule.dll" />
 	</ItemGroup>
 
 </Project>
