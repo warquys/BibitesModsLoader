@@ -11,14 +11,13 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>A mods loader for The Bibites Project.</Description>
 		<PackageProjectUrl>https://github.com/warquys/BibitesModsLoader</PackageProjectUrl>
-		<PackageTags>Mod Mods Bibites BibitesModding</PackageTags>
+		<PackageTags>BibitesMods;Mod;Mods;BibitesModding</PackageTags>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 
 		<TargetFramework>net472</TargetFramework>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
-		<PackageTags>BibitesMods;Build;Props</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageOutputPath>$(SolutionDir)Nuget</PackageOutputPath>
 		<IncludeBuildOutput>true</IncludeBuildOutput>
@@ -39,7 +38,7 @@
 	
 	<ItemGroup>
 		<None Include="..\.editorconfig" Link="Include\.editorconfig" />
-		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
 		<None Include="..\Ref\UnityEngine.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.dll" />
 		<None Include="..\Ref\UnityEngine.CoreModule.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.CoreModule.dll" />
 		<None Include="..\Ref\UnityEngine.Physics2DModule.dll" Pack="true" PackagePath="lib\net472\" Link="Include\UnityEngine.Physics2DModule.dll" />

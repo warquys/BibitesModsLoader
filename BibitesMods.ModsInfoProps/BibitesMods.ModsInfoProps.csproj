@@ -10,11 +10,10 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Generate a sub class containing the information of the assembly.</Description>
 		<PackageProjectUrl>https://github.com/warquys/BibitesModsLoader/tree/main/BibitesModsLoader.ModsInfoProps</PackageProjectUrl>
-		<PackageTags>Mod Mods Bibites BibitesModding</PackageTags>
+		<PackageTags>Mod;Mods;Bibites;BibitesModding;Props</PackageTags>
 		<PackageLicenseFile>LISENCE</PackageLicenseFile>
 		
 		<TargetFrameworks>net472</TargetFrameworks>
-		<PackageTags>BibitesMods;Build;Props</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageOutputPath>$(SolutionDir)Nuget</PackageOutputPath>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
