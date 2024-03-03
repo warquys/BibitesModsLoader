@@ -2,7 +2,7 @@
 
 A Library for easily implement mods for [The Bibites Project](https://thebibites.itch.io/the-bibites).
 
-To test your mods you first need to install the modloader, localy [Installation](https://github.com/warquys/BibitesModsLoader?tab=readme-ov-file#installation). 
+To test your mods you first need to install the modloader, localy: [Installation](https://github.com/warquys/BibitesModsLoader?tab=readme-ov-file#installation). 
 
 
 
