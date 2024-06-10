@@ -11,7 +11,7 @@ public static class Loader
     private static bool _enabled = false;
 
     public static Version Version { get; } = new Version(ModInfo.MOD_VERSION);
-    public static SortedList<ModAttribute, IMod> Mods { get; } = new();
+    public static SortedList<ModAttribute, IMod> Mods { get; } = [];
     public static string LogPath { get; private set; }
 
     public static void Main(string logPath)

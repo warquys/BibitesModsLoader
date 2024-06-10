@@ -12,17 +12,25 @@ namespace Injector
             var injector = new Injector();
             try
             {
-
+                string path;
                 if (args.Length == 0)
-                    return;
+                {
+                    Console.WriteLine("Location of the assembly:");
+                    path = Console.ReadLine();
+                }
+                else
+                {
+                    path = args[0];
+                }
 
-                var loadModule = ModuleDefMD.Load(args[0], new ModuleCreationOptions());
+                var loadModule = ModuleDefMD.Load(path, new ModuleCreationOptions());
 
                 injector.Start(loadModule);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                Console.ReadKey();
             }
         }
     }

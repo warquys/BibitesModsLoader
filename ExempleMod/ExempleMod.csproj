@@ -16,6 +16,10 @@
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DebugType>Full</DebugType>
+	</PropertyGroup>
+
 	<Import Project="..\BibitesMods.ModsInfoProps\BibitesMods.ModsInfoProps.props" />
 
 	<ItemGroup>
