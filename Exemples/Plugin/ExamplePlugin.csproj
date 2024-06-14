@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>ExampleModule</Title>
+		<Authors>VT</Authors>
+		<AssemblyName>$(Title)</AssemblyName>
+		<Product>Example Module</Product>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="ExamplePlugin.cs~RF47bdcf7.TMP" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Ya... if you see this, create a new dll projet and use the nugets :) -->
+		<ProjectReference Include="..\..\BibitesMods.Module\BibitesMods.Module.csproj" />
+    </ItemGroup>
+
+	<!-- Same for it use BibitesMods.ModsInfoProps nuget-->
+	<Import Project="..\..\BibitesMods.ModsInfoProps\BibitesMods.ModsInfoProps.props" />
+
+</Project>

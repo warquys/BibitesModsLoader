@@ -1,0 +1,39 @@
+<Project>
+	<Target Name="GeneratedMetaDataClass" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)GeneratedMetaDataClass.cs">
+		<PropertyGroup>
+			<ModGuid Condition="'$(ModGuid)' == ''">$(AssemblyName)</ModGuid>
+			<ModName Condition="'$(ModName)' == ''">$(Product)</ModName>
+			<ModAuthors Condition="'$(ModAuthors)' == ''">$(Authors)</ModAuthors>
+			<ModVersion Condition="'$(ModVersion)' == ''">$(Version)</ModVersion>
+			<ModDescription Condition="'$(ModDescription)' == ''">$(Description)</ModDescription>
+			<ModNicesse Condition="'$(ModNicesse)' == ''">10</ModNicesse>
+
+			<!-- ModNicesse is set to 10 by default -->
+
+			<GeneratedText>
+				<![CDATA[
+namespace $(RootNamespace)
+{
+	internal static class ModInfo
+	{
+		public const string MOD_GUID = "$(ModGuid)"%3B
+		public const string MOD_NAME = "$(ModName)"%3B
+		public const string MOD_AUTHORS = "$(ModAuthors)"%3B
+		public const string MOD_VERSION = "$(ModVersion)"%3B
+		public const string MOD_DESCRIPTION = "$(ModDescription)"%3B
+		public const byte MOD_NICESSE = $(ModNicesse)%3B
+	}
+}				
+		]]>
+			</GeneratedText>
+			<GeneratedFilePath>$(IntermediateOutputPath)ModInfo.cs</GeneratedFilePath>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<Compile Include="$(GeneratedFilePath)" />
+			<FileWrites Include="$(GeneratedFilePath)" />
+		</ItemGroup>
+
+		<WriteLinesToFile Lines="$(GeneratedText)" File="$(GeneratedFilePath)" WriteOnlyWhenDifferent="true" Overwrite="true" />
+	</Target>
+</Project>

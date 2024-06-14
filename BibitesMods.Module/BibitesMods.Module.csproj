@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<LangVersion>10.0</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<OutputType>Library</OutputType>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>BibitesMods</RootNamespace>
+		<Configurations>Debug;Release;Dev;Custom Version</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>BibitesMods.Module</Title>
+		<Authors>VT</Authors>
+		<AssemblyName>$(Title)</AssemblyName>
+		<Product>BibitesMods Module</Product>
+		<Version>2.0.0</Version>
+		<SubVersion>None</SubVersion>
+		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>Build</ContentTargetFolders>
+		<FileVersion>$(Version)</FileVersion>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageId>BibitesModsLoader</PackageId>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Dev'">
+	  <DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<PackageOutputPath>$(SolutionDir)Nuget</PackageOutputPath>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Custom Version'">
+		<PackageOutputPath>$(SolutionDir)CustomNuget</PackageOutputPath>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.3.3" />
+		<PackageReference Include="NeuronModding.Core" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Commands" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Configs" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Patcher" Version="1.0.2" />
+	</ItemGroup>
+
+	<Import Project=".\ClassInfoGenrator.props" />
+
+	<ItemGroup>
+		<Reference Include="BibitesAssembly" HintPath="..\Ref\BibitesAssembly-Publicized.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+		
+		<Reference Include="netstandard" HintPath="..\Ref\netstandard.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+		
+		<Reference Include="UnityEngine" HintPath="..\Ref\UnityEngine.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+
+		<Reference Include="UnityEngine.CoreModule" HintPath="..\Ref\UnityEngine.CoreModule.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+
+		<Reference Include="UnityEngine.Physics2DModule" HintPath="..\Ref\UnityEngine.Physics2DModule.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+
+		<Reference Include="UnityEngine.PhysicsModule" HintPath="..\Ref\UnityEngine.PhysicsModule.dll">
+			<PackagePath>lib\net472\</PackagePath>
+			<Pack>true</Pack>
+		</Reference>
+
+	</ItemGroup>
+
+</Project>

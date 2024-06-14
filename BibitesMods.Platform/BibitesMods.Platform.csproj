@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<LangVersion>10.0</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<OutputType>Library</OutputType>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>BibitesMods.Platform</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>BibitesMods.Platform</Title>
+		<Authors>VT</Authors>
+		<AssemblyName>$(Title)</AssemblyName>
+		<Product>BibitesMods Platform</Product>
+		<Version>1.0.0</Version>
+		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.3.3" />
+		<PackageReference Include="NeuronModding.Core" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Commands" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Configs" Version="1.0.2" />
+		<PackageReference Include="NeuronModding.Modules.Patcher" Version="1.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="BibitesAssembly" HintPath="..\Ref\BibitesAssembly-Publicized.dll" />
+		<Reference Include="netstandard" HintPath="..\Ref\netstandard.dll" />
+		<Reference Include="UnityEngine" HintPath="..\Ref\UnityEngine.dll" />
+		<Reference Include="UnityEngine.CoreModule" HintPath="..\Ref\UnityEngine.CoreModule.dll" />
+		<Reference Include="UnityEngine.Physics2DModule" HintPath="..\Ref\UnityEngine.Physics2DModule.dll" />
+		<Reference Include="UnityEngine.PhysicsModule" HintPath="..\Ref\UnityEngine.PhysicsModule.dll" />
+	</ItemGroup>
+
+</Project>

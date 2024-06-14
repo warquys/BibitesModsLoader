@@ -1,0 +1,39 @@
+<Project>
+	<Target Name="GeneratedMetaDataClass" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)GeneratedMetaDataClass.cs">
+		<PropertyGroup>
+			<ModeGuid Condition="'$(ModeGuid)' == ''">$(AssemblyName)</ModeGuid>
+			<ModeName Condition="'$(ModeName)' == ''">$(Product)</ModeName>
+			<ModeAuthors Condition="'$(ModeAuthors)' == ''">$(Authors)</ModeAuthors>
+			<ModeVersion Condition="'$(ModeVersion)' == ''">$(Version)</ModeVersion>
+			<ModeSubVersion Condition="'$(ModeSbVersion)' == ''">$(SubVersion)</ModeSubVersion>
+			<ModeDescription Condition="'$(ModeDescription)' == ''">$(Description)</ModeDescription>
+			<GameVersion Condition="'$(GameVersion)' == ''">Unknow</GameVersion>
+
+			<GeneratedText>
+				<![CDATA[
+namespace $(RootNamespace)
+{
+	internal static class ModeInfo
+	{
+		public const string GUID = "$(ModeGuid)"%3B
+		public const string NAME = "$(ModeName)"%3B
+		public const string AUTHORS = "$(ModeAuthors)"%3B
+		public const string VERSION = "$(ModeVersion)"%3B
+		public const string SUB_VERSION = "$(ModeSubVersion)"%3B
+		public const string DESCRIPTION = "$(ModeDescription)"%3B
+		public const string GAME_VERSION = "$(GameVersion)"%3B
+	}
+}				
+		]]>
+			</GeneratedText>
+			<GeneratedFilePath>$(IntermediateOutputPath)ModeInfo.cs</GeneratedFilePath>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<Compile Include="$(GeneratedFilePath)" />
+			<FileWrites Include="$(GeneratedFilePath)" />
+		</ItemGroup>
+
+		<WriteLinesToFile Lines="$(GeneratedText)" File="$(GeneratedFilePath)" WriteOnlyWhenDifferent="true" Overwrite="true" />
+	</Target>
+</Project>

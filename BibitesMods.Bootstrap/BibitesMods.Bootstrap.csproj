@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<LangVersion>10.0</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<OutputType>Library</OutputType>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>BibitesMods.Bootstrap</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>BibitesMods.Bootstrap</Title>
+		<Authors>VT</Authors>
+		<AssemblyName>$(Title)</AssemblyName>
+		<Product>BibitesMods Bootstrap</Product>
+		<Version>1.0.0</Version>
+		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="BibitesAssembly" HintPath="..\Ref\BibitesAssembly-Publicized.dll" />
+		<Reference Include="netstandard" HintPath="..\Ref\netstandard.dll" />
+		<Reference Include="UnityEngine" HintPath="..\Ref\UnityEngine.dll" />
+		<Reference Include="UnityEngine.CoreModule" HintPath="..\Ref\UnityEngine.CoreModule.dll" />
+		<Reference Include="UnityEngine.Physics2DModule" HintPath="..\Ref\UnityEngine.Physics2DModule.dll" />
+		<Reference Include="UnityEngine.PhysicsModule" HintPath ="..\Ref\UnityEngine.PhysicsModule.dll" />
+	</ItemGroup>
+
+</Project>

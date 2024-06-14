@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Title>BibitesModsLoader.PluginInfoProps</Title>
+		<Version>1.0.0</Version>
+		<RepositoryUrl>https://github.com/warquys/BibitesModsLoader</RepositoryUrl>
+
+		<PackageId>BibitesMods.ModsInfoProps</PackageId>
+		<Authors>VT</Authors>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Description>Generate a sub class containing the information of the assembly.</Description>
+		<PackageProjectUrl>https://github.com/warquys/BibitesModsLoader/tree/main/BibitesModsLoader.ModsInfoProps</PackageProjectUrl>
+		<PackageTags>Mod;Mods;Bibites;BibitesModding;Props</PackageTags>
+		<PackageLicenseFile>LISENCE</PackageLicenseFile>
+		
+		<TargetFrameworks>net472</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageOutputPath>$(SolutionDir)Nuget</PackageOutputPath>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>Build</ContentTargetFolders>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- This fallow file need to ave the same name than the packageId so do not rename it! -->
+		<Content Include="BibitesMods.ModsInfoProps.props" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="LISENCE" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
