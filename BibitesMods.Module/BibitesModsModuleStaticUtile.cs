@@ -9,17 +9,15 @@ public partial class BibitesModsModule
     static BibitesModsModule()
     {
         Version = Version.Parse(ModeInfo.VERSION);
-        SubVersion = Version.Parse(ModeInfo.SUB_VERSION);
-        BasedGameVersion = Version.Parse(ModeInfo.GAME_VERSION);
+        SubVersion = ModeInfo.SUB_VERSION;
+        BasedGameVersion = new Version();//Version.Parse(ModeInfo.GAME_VERSION);
     }
 
     public static Version Version;
-    public static Version SubVersion;
+    public static string SubVersion;
 
 #if CUSTOM_VERSION
     public const VersionType Type = VersionType.Beta;
-#elif DEBUG
-    public const VersionType Type = VersionType.Debug;
 #elif DEV
     public const VersionType Type = VersionType.Dev;
 #elif RELEASE

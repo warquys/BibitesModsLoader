@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleModule", "Exemples\M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamplePlugin", "Exemples\Plugin\ExamplePlugin.csproj", "{1867F468-EC2B-4642-BF39-434279792707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalConsoleAsyncTest", "ExternalConsoleAsyncTest\ExternalConsoleAsyncTest.csproj", "{2F0ADC42-614B-436A-84E2-8974B9974B25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Custom Version|Any CPU = Custom Version|Any CPU
@@ -85,6 +87,14 @@ Global
 		{1867F468-EC2B-4642-BF39-434279792707}.Dev|Any CPU.Build.0 = Debug|Any CPU
 		{1867F468-EC2B-4642-BF39-434279792707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1867F468-EC2B-4642-BF39-434279792707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Custom Version|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Custom Version|Any CPU.Build.0 = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0ADC42-614B-436A-84E2-8974B9974B25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

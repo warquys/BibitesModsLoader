@@ -23,10 +23,7 @@ public class CoroutineHandler : MonoBehaviour
 
     void Update()
 	{
-        while (true)
-        {
-            Ticker.Invoke();
-        }
+        Ticker.Invoke();
     }
 	#endregion
 }

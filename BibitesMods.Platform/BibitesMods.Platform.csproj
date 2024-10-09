@@ -32,6 +32,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\BibitesMods.Bootstrap\BibitesMods.Bootstrap.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Reference Include="BibitesAssembly" HintPath="..\Ref\BibitesAssembly-Publicized.dll" />
 		<Reference Include="netstandard" HintPath="..\Ref\netstandard.dll" />
 		<Reference Include="UnityEngine" HintPath="..\Ref\UnityEngine.dll" />

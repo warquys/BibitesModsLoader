@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Doorstop;
 using Neuron.Core.Logging.Processing;
 
 namespace BibitesMods.Platform.Renderer;
@@ -6,7 +7,7 @@ namespace BibitesMods.Platform.Renderer;
 public sealed class TextFileRenderer : ILogRender
 {
     // Same as AppInitializerPatche.cs of BibitesMods.Bootstrap
-    const string LogFile = "BibitesMods.log";
+    const string LogFile = Entrypoint.LogFile;
 
     public void Render(LogOutput output)
     {

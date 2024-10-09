@@ -1,4 +1,7 @@
-﻿using Neuron.Core.Modules;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.Extensions.Logging;
+using Neuron.Core.Logging;
+using Neuron.Core.Modules;
 using Neuron.Modules.Commands;
 using Neuron.Modules.Patcher;
 using Ninject;
@@ -24,17 +27,16 @@ public partial class BibitesModsModule : Module
     
     private IKernel _kernel;
 
-
     public override void Load(IKernel kernel)
     {
         Logger.Info("BibitesMods.Module is loading");
-
+        
         _kernel = kernel;
 
         // Utility.Version is form bibites project
         if (BasedGameVersion != Utility.Version.Present)
             Logger.Warn($"Version: This Version of BibitesMods is build for Version {BasedGameVersion}, Game Current Version{Utility.Version.Present}\nBugs may occurs");
-    
+        
         Logger.Info("BibitesMods.Module is loaded");
     }
 }

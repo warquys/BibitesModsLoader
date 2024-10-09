@@ -13,6 +13,7 @@
 
 	<PropertyGroup>
 		<Title>BibitesMods.Module</Title>
+		<Description>The main module use as a base for other plugins.</Description>
 		<Authors>VT</Authors>
 		<AssemblyName>$(Title)</AssemblyName>
 		<Product>BibitesMods Module</Product>
@@ -87,6 +88,10 @@
 			<Pack>true</Pack>
 		</Reference>
 
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Commands\" />
 	</ItemGroup>
 
 </Project>
